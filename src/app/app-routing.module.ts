@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HitsComponent } from './component/hits/hits.component';
 
 const routes: Routes = [
-  {path:'hits', component: HitsComponent}
+  {path:'hits', component: HitsComponent},
+  {path:'**', redirectTo:'hits'}
 ];
 
 @NgModule({
