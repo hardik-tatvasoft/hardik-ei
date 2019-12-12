@@ -1,6 +1,9 @@
-<p>
-{{data | json}}
-</p>
+<h1 mat-dialog-title>Display row data</h1>
+<div mat-dialog-content>
+  <p class="data-modal">
+    {{data | json}}
+    </p>
+</div>
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
 </div>

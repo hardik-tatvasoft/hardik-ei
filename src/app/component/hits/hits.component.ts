@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HitsService } from '../../service/hits.service';
 
-//Material component includes
+//Material includes
 import {MatTableDataSource} from '@angular/material';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog} from '@angular/material';
 
 import { ModalComponent } from '../modal/modal.component';
 
@@ -14,20 +14,20 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class HitsComponent implements OnInit
 {
-  constructor(private hitService: HitsService, public dialog: MatDialog) { }
-
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['title','url','created_at','author'];
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
+  constructor(private hitService: HitsService, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getHitsData();
     setInterval(()=>{
       this.getHitsData();
     }, 10000);
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   getHitsData()
