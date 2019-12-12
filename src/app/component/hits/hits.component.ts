@@ -17,6 +17,10 @@ export class HitsComponent implements OnInit
   dataSource = new MatTableDataSource();
   displayedColumns: string[] = ['title','url','created_at','author'];
 
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
   ngOnInit() {
     this.hitService.getHits().subscribe(data=>
     {
