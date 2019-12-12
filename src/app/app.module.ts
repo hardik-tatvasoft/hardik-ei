@@ -7,15 +7,19 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HitsComponent } from './component/hits/hits.component';
+import { ModalComponent } from './component/modal/modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HitsComponent
+    HitsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +28,12 @@ import { HitsComponent } from './component/hits/hits.component';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatButtonModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalComponent]
 })
 export class AppModule { }
