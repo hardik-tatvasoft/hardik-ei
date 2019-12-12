@@ -22,10 +22,18 @@ export class HitsComponent implements OnInit
   }
 
   ngOnInit() {
+    this.getHitsData();
+    setInterval(()=>{
+      this.getHitsData();
+    }, 10000);
+  }
+
+  getHitsData()
+  {
     this.hitService.getHits().subscribe(data=>
     {
+      this.dataSource.data = null;
       this.dataSource.data = data['hits'];
     });
   }
-
 }
